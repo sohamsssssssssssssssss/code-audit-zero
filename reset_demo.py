@@ -1,4 +1,7 @@
-from fastapi import FastAPI, HTTPException
+# reset_demo.py
+# RUN THIS TO BREAK THE APP AGAIN FOR A LIVE DEMO
+
+code = """from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
 app = FastAPI()
@@ -41,3 +44,9 @@ def buy_item(order: PurchaseRequest):
     inventory[order.item] -= order.quantity
 
     return {"message": "Purchase successful", "new_balance": user_wallet["balance"]}
+"""
+
+with open("target_app/main.py", "w") as f:
+    f.write(code)
+
+print("✅ APP BROKEN. Ready for Demo!")
