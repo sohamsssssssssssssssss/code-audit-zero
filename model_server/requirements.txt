@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+torch
+transformers
+peft
+bitsandbytes
+accelerate
+pydantic
+python-dotenv

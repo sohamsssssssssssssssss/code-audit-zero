@@ -1,0 +1,14 @@
+rules:
+  - id: custom_sql_injection
+    patterns:
+      - pattern: cursor.execute(f"SELECT ... WHERE id={$ID}")
+    message: "Potential SQL Injection via f-string detected."
+    languages: [python]
+    severity: ERROR
+
+  - id: path_traversal_vulnerability
+    patterns:
+      - pattern: open(f"logs/{$V}", ...)
+    message: "Path Traversal vulnerability detected in file access."
+    languages: [python]
+    severity: ERROR

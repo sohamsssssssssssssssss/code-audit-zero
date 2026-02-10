@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+redis
+requests
+z3-solver==4.12.2.0
+openai
+pydantic
+pydantic-settings
+colorlog
+watchdog
+streamlit
